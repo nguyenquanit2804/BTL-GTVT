@@ -43,6 +43,8 @@ public class JobService {
         }
         newJob.setMinSalary(request.getMinSalary());
         newJob.setMaxSalary(request.getMaxSalary());
+        newJob.setStatus(CustomerManagement.OPEN);
+        jobRepository.save(newJob);
     }
 
     public void updateJob(JobUpdateRequest request) {

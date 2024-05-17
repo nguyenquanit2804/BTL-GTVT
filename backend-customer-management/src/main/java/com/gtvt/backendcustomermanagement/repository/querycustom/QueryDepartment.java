@@ -22,7 +22,7 @@ public class QueryDepartment {
         sql.append("dp.DEPARTMENT_NAME      AS departmentName, ");
         sql.append("count(em.DEPARTMENT_ID) AS employeeUsedCount ");
         sql.append("FROM DEPARTMENT dp ");
-        sql.append("JOIN COMPANY.EMPLOYEE em on dp.DEPARTMENT_ID = em.DEPARTMENT_ID AND (dp.STATUS = 1) ");
+        sql.append("LEFT JOIN COMPANY.EMPLOYEE em on dp.DEPARTMENT_ID = em.DEPARTMENT_ID AND (em.STATUS = 1) ");
         sql.append("GROUP BY dp.DEPARTMENT_NAME ");
         if (StringUtil.isNotNullOrEmpty(request.getDepartmentName())) {
             sql.append("HAVING dp.DEPARTMENT_NAME = :departmentName ");

@@ -72,6 +72,7 @@ public class EmployeeService {
             throw new IllegalArgumentException("Employee not found");
         }
         findEmployee.setStatus(CustomerManagement.CLOSED);
+        employeeRepository.save(findEmployee);
     }
 
     public List<GetListCustomerResponse> getCustomerByInformation(GetListCustomerRequest request) {
@@ -94,7 +95,7 @@ public class EmployeeService {
             return false;
         }
         List<Employee> findEmployeesByJobId = employeeRepository.findAllByJobIdAndStatus(id, CustomerManagement.OPEN);
-        if (findEmployeesByJobId.size() != 0) {
+        if (findEmployeesByJobId.size() == 0) {
             return false;
         }
         return true;

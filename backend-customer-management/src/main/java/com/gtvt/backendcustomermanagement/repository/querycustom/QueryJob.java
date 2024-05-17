@@ -21,8 +21,9 @@ public class QueryJob {
         sql.append("SELECT ");
         sql.append("job.JOB_TITLE           AS jobName, ");
         sql.append("count(em.DEPARTMENT_ID) AS employeeUsedCount ");
+        sql.append("FROM ");
         sql.append("JOB job ");
-        sql.append("JOIN COMPANY.EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
+        sql.append("LEFT JOIN COMPANY.EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
         sql.append("GROUP BY job.JOB_TITLE ");
         if (StringUtil.isNotNullOrEmpty(request.getJobName())) {
             sql.append("HAVING job.JOB_TITLE = :jobName ");

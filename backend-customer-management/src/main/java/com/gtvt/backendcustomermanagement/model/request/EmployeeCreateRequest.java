@@ -10,9 +10,12 @@ public class EmployeeCreateRequest {
     private String firstName;
     private String lastName;
     private String gender;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String address;
     private String phoneNumber;
     private String email;
+    private String idCard;
+    private Long departmentId;
+    private Long jobId;
     private MultipartFile face;
 }

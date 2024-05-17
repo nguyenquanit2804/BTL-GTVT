@@ -26,19 +26,19 @@ public class JobController {
     private JobService jobService;
 
     @RequestMapping(method = RequestMethod.POST, path = "/add")
-    public ResponseEntity<?> addDepartment(@RequestBody JobCreateRequest request) {
+    public ResponseEntity<?> addJob(@RequestBody JobCreateRequest request) {
         jobService.addJob(request);
         return responseFactory.success();
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/update")
-    public ResponseEntity<?> updateDepartment(@RequestBody JobUpdateRequest request) {
+    public ResponseEntity<?> updateJob(@RequestBody JobUpdateRequest request) {
         jobService.updateJob(request);
         return responseFactory.success();
     }
 
     @RequestMapping(method = RequestMethod.POST, path = "/delete")
-    public ResponseEntity<?> deleteDepartment(@RequestBody JobDeleteRequest request) {
+    public ResponseEntity<?> deleteJob(@RequestBody JobDeleteRequest request) {
         jobService.deleteJob(request);
         return responseFactory.success();
     }

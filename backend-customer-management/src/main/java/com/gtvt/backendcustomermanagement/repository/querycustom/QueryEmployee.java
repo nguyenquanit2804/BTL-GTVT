@@ -30,8 +30,8 @@ public class QueryEmployee {
         sql.append("dep.DEPARTMENT_NAME AS departmentName, ");
         sql.append("j.JOB_TITLE         AS jobName ");
         sql.append("FROM EMPLOYEE em ");
-        sql.append("JOIN DEPARTMENT dep ON em.DEPARTMENT_ID = em.DEPARTMENT_ID ");
-        sql.append("JOIN JOB j on em.JOB_ID = j.JOB_ID ");
+        sql.append("LEFT JOIN DEPARTMENT dep ON em.DEPARTMENT_ID = em.DEPARTMENT_ID ");
+        sql.append("LEFT JOIN JOB j on em.JOB_ID = j.JOB_ID ");
         sql.append("WHERE em.STATUS = 1 ");
 
         if (StringUtil.isNotNullOrEmpty(request.getIdCard())) {
