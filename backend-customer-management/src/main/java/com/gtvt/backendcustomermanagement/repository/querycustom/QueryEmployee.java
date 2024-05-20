@@ -1,6 +1,7 @@
 package com.gtvt.backendcustomermanagement.repository.querycustom;
 
 import com.gtvt.backendcustomermanagement.model.request.GetListCustomerRequest;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdCustomerResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListCustomerResponse;
 import com.gtvt.backendcustomermanagement.utils.SqlQueryUtil;
 import com.gtvt.backendcustomermanagement.utils.StringUtil;
@@ -18,6 +19,7 @@ public class QueryEmployee {
         HashMap<String, Object> params = new HashMap<>();
         StringBuilder sql = new StringBuilder();
         sql.append("SELECT ");
+        sql.append("em.EMPLOYEE_ID      AS id, ");
         sql.append("em.ID_CARD          AS idCard, ");
         sql.append("em.FIRST_NAME       AS firstName, ");
         sql.append("em.LAST_NAME        AS lastName, ");
@@ -30,7 +32,7 @@ public class QueryEmployee {
         sql.append("dep.DEPARTMENT_NAME AS departmentName, ");
         sql.append("j.JOB_TITLE         AS jobName ");
         sql.append("FROM EMPLOYEE em ");
-        sql.append("LEFT JOIN DEPARTMENT dep ON em.DEPARTMENT_ID = em.DEPARTMENT_ID ");
+        sql.append("LEFT JOIN DEPARTMENT dep ON em.DEPARTMENT_ID = dep.DEPARTMENT_ID ");
         sql.append("LEFT JOIN JOB j on em.JOB_ID = j.JOB_ID ");
         sql.append("WHERE em.STATUS = 1 ");
 
@@ -65,6 +67,34 @@ public class QueryEmployee {
 
         return sqlQueryUtil.queryModel().queryForList(sql.toString(), params, GetListCustomerResponse.class);
 
+    }
+
+    public GetDetailByIdCustomerResponse getDetailByIDCustomer (Long id) {
+        HashMap<String, Object> params = new HashMap<>();
+        StringBuilder sql = new StringBuilder();
+        sql.append("SELECT ");
+        sql.append("em.EMPLOYEE_ID      AS id, ");
+        sql.append("em.ID_CARD          AS idCard, ");
+        sql.append("em.FIRST_NAME       AS firstName, ");
+        sql.append("em.LAST_NAME        AS lastName, ");
+        sql.append("em.GENDER, ");
+        sql.append("em.DATE_OF_BIRTH    AS dateOfBirth,  ");
+        sql.append("em.ADDRESS, ");
+        sql.append("em.PHONE_NUMBER     AS phoneNumber, ");
+        sql.append("em.EMAIL, ");
+        sql.append("em.FACE, ");
+        sql.append("dep.DEPARTMENT_NAME AS departmentName, ");
+        sql.append("j.JOB_TITLE         AS jobName ");
+        sql.append("FROM EMPLOYEE em ");
+        sql.append("LEFT JOIN DEPARTMENT dep ON em.DEPARTMENT_ID = dep.DEPARTMENT_ID ");
+        sql.append("LEFT JOIN JOB j on em.JOB_ID = j.JOB_ID ");
+        sql.append("WHERE em.STATUS = 1 ");
+
+        if (id != null) {
+            sql.append("AND  em.EMPLOYEE_ID = :id ");
+            params.put("id", id);
+        }
+        return sqlQueryUtil.queryModel().queryForObject(sql.toString(), params, GetDetailByIdCustomerResponse.class);
     }
 
 }

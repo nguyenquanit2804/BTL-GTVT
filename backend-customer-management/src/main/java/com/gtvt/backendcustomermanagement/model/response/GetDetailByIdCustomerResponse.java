@@ -5,7 +5,7 @@ import lombok.Data;
 import java.sql.Date;
 
 @Data
-public class GetListCustomerResponse {
+public class GetDetailByIdCustomerResponse {
     private Long id;
     private String idCard;
     private String firstName;

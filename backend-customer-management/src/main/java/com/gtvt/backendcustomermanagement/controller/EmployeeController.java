@@ -1,10 +1,8 @@
 package com.gtvt.backendcustomermanagement.controller;
 
 import com.gtvt.backendcustomermanagement.factory.ResponseFactory;
-import com.gtvt.backendcustomermanagement.model.request.EmployeeCreateRequest;
-import com.gtvt.backendcustomermanagement.model.request.EmployeeDeleteRequest;
-import com.gtvt.backendcustomermanagement.model.request.EmployeeUpdateRequest;
-import com.gtvt.backendcustomermanagement.model.request.GetListCustomerRequest;
+import com.gtvt.backendcustomermanagement.model.request.*;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdCustomerResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListCustomerResponse;
 import com.gtvt.backendcustomermanagement.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +47,12 @@ public class EmployeeController {
     @RequestMapping(method = RequestMethod.POST, path = "/get-detail")
     public ResponseEntity<?> getCustomerByInformation(@RequestBody GetListCustomerRequest request) {
       List<GetListCustomerResponse> response = employeeService.getCustomerByInformation(request);
+        return responseFactory.success(response);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/get-detail-by-id")
+    public ResponseEntity<?> getCustomerByInformationById(@RequestBody GetDetailByIdCustomerRequest request) {
+        GetDetailByIdCustomerResponse response = employeeService.getDetailByIdCustomer(request);
         return responseFactory.success(response);
     }
 

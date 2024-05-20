@@ -12,12 +12,10 @@ public class ConvertByteToBase64Utils {
 
     public static String convertBase64(InputStream object) throws IOException {
 
-        try {
+
             byte[] bytes = IOUtils.toByteArray(object);
             String encode = Base64.getEncoder().encodeToString(bytes);
             return encode;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
     }
 }
