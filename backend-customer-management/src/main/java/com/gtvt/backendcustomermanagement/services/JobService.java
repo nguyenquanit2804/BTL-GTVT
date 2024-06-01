@@ -3,10 +3,8 @@ package com.gtvt.backendcustomermanagement.services;
 import com.gtvt.backendcustomermanagement.common.CustomerManagement;
 import com.gtvt.backendcustomermanagement.entity.Employee;
 import com.gtvt.backendcustomermanagement.entity.Job;
-import com.gtvt.backendcustomermanagement.model.request.GetListJobRequest;
-import com.gtvt.backendcustomermanagement.model.request.JobCreateRequest;
-import com.gtvt.backendcustomermanagement.model.request.JobDeleteRequest;
-import com.gtvt.backendcustomermanagement.model.request.JobUpdateRequest;
+import com.gtvt.backendcustomermanagement.model.request.*;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdJobResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListJobResponse;
 import com.gtvt.backendcustomermanagement.repository.JobRepository;
 import com.gtvt.backendcustomermanagement.repository.querycustom.QueryJob;
@@ -88,5 +86,10 @@ public class JobService {
 
     public List<GetListJobResponse> getListJobDetail(GetListJobRequest request) {
         return queryJob.getInfoJob(request);
+    }
+
+
+    public GetDetailByIdJobResponse getJobDetailById(GetDetailByIdJobRequest request) {
+        return queryJob.getInfoJobById(request);
     }
 }

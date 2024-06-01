@@ -3,10 +3,8 @@ package com.gtvt.backendcustomermanagement.services;
 
 import com.gtvt.backendcustomermanagement.common.CustomerManagement;
 import com.gtvt.backendcustomermanagement.entity.Department;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentCreateRequest;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentDeleteRequest;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentUpdateRequest;
-import com.gtvt.backendcustomermanagement.model.request.GetListDepartmentRequest;
+import com.gtvt.backendcustomermanagement.model.request.*;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdDepartmentResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListDepartmentResponse;
 import com.gtvt.backendcustomermanagement.repository.DepartmentRepository;
 import com.gtvt.backendcustomermanagement.repository.querycustom.QueryDepartment;
@@ -71,6 +69,9 @@ public class DepartmentService {
     public List<GetListDepartmentResponse> getListDepartment (GetListDepartmentRequest request) {
         return queryDepartment.getInfoDepartment(request);
 
+    }
+    public GetDetailByIdDepartmentResponse getDetailByIdDepartmentResponse (GetDetailByIdDepartmentRequest request) {
+        return queryDepartment.getInfoDepartmentById(request);
     }
 
 

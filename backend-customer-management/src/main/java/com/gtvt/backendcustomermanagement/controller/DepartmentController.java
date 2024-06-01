@@ -1,10 +1,8 @@
 package com.gtvt.backendcustomermanagement.controller;
 
 import com.gtvt.backendcustomermanagement.factory.ResponseFactory;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentCreateRequest;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentDeleteRequest;
-import com.gtvt.backendcustomermanagement.model.request.DepartmentUpdateRequest;
-import com.gtvt.backendcustomermanagement.model.request.GetListDepartmentRequest;
+import com.gtvt.backendcustomermanagement.model.request.*;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdDepartmentResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListDepartmentResponse;
 import com.gtvt.backendcustomermanagement.services.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +42,12 @@ public class DepartmentController {
     @RequestMapping(method = RequestMethod.POST, path = "/get-detail")
     public ResponseEntity<?> getListDepartment(@RequestBody GetListDepartmentRequest request) {
       List<GetListDepartmentResponse> response = departmentService.getListDepartment(request);
+        return responseFactory.success(response);
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/get-detail-by-id")
+    public ResponseEntity<?> getListDepartment(@RequestBody GetDetailByIdDepartmentRequest request) {
+        GetDetailByIdDepartmentResponse response = departmentService.getDetailByIdDepartmentResponse(request);
         return responseFactory.success(response);
     }
 

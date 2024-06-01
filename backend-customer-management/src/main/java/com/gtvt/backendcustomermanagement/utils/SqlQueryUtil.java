@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 
 
 /**
- * @author haind6
+ * @author quanNA
  */
 @Component
 public class SqlQueryUtil {

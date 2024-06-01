@@ -2,6 +2,7 @@ package com.gtvt.backendcustomermanagement.controller;
 
 import com.gtvt.backendcustomermanagement.factory.ResponseFactory;
 import com.gtvt.backendcustomermanagement.model.request.*;
+import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdJobResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListDepartmentResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListJobResponse;
 import com.gtvt.backendcustomermanagement.services.DepartmentService;
@@ -48,6 +49,14 @@ public class JobController {
       List<GetListJobResponse> response = jobService.getListJobDetail(request);
         return responseFactory.success(response);
     }
+
+    @RequestMapping(method = RequestMethod.POST, path = "/get-detail-by-id")
+    public ResponseEntity<?> getJobDetailById(@RequestBody GetDetailByIdJobRequest request) {
+        GetDetailByIdJobResponse response = jobService.getJobDetailById(request);
+        return responseFactory.success(response);
+    }
+
+
 
 
 

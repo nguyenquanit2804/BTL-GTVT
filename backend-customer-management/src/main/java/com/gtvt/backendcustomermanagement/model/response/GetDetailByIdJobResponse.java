@@ -3,7 +3,7 @@ package com.gtvt.backendcustomermanagement.model.response;
 import lombok.Data;
 
 @Data
-public class GetListJobResponse {
+public class GetDetailByIdJobResponse {
     private Long id;
     private String jobName;
     private String createDate;
