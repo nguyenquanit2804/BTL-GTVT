@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "68746fa1-e247-47b2-abe6-c755538c3cee",
+		"name": "BTL-GTVT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18776941"
+	},
+	"item": [
+		{
+			"name": "UPDATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Nguyen",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Quan3",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Nam",
+							"type": "text"
+						},
+						{
+							"key": "dateOfBirth",
+							"value": "28/04/1999",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "HaNoi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "face",
+							"type": "file",
+							"src": "/Users/apple/Desktop/Screen Shot 2024-05-14 at 18.48.47.png"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "12321541",
+							"type": "text"
+						},
+						{
+							"key": "idCard",
+							"value": "1231256543213",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Nguyen",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Quan4",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "Nam",
+							"type": "text"
+						},
+						{
+							"key": "dateOfBirth",
+							"value": "28/04/1999",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "HaNoi",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "email@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "face",
+							"type": "file",
+							"src": "/Users/apple/Desktop/Screen Shot 2024-05-14 at 18.48.47.png"
+						},
+						{
+							"key": "idCard",
+							"value": "12312412",
+							"type": "text"
+						},
+						{
+							"key": "phoneNumber",
+							"value": "121251356312",
+							"type": "text"
+						},
+						{
+							"key": "departmentId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "jobId",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INACTIVE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DETAIL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idCard\": \"idCard_43e34f492a53\",\n    \"lastName\": \"lastName_cb93aff483f9\",\n    \"gender\": \"gender_eb6ae42ed172\",\n    \"phoneNumber\": \"phoneNumber_da443d1e861b\",\n    \"email\": \"email_5e5bf6c3bd9a\",\n    \"departmentName\": \"departmentName_55a6e4a6ec3c\",\n    \"jobName\": \"jobName_14bb447ef9da\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/get-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"get-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_DETAIL_BY_ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee/get-detail-by-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee",
+						"get-detail-by-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPARTMENT_ADĐ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"departmentName\": \"BA\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPARTMENT_UPDATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"departmentId\": 3,\n  \"departmentName\": \"CNTT2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPARTMENT_\bINACTIVE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"departmentId\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPARTMENT_GETDETAIL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departmentName\": \"SA1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/get-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"get-detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPARTMENT_GET_DETAIL_BY_ID",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departmentId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/department/get-detail-by-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"department",
+						"get-detail-by-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOB_ADD",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"jobName\": \"jobName_2eccfec61841\",\n  \"minSalary\": 0.00,\n  \"maxSalary\": 100.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/job/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOB_UPDATE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"idJob\": 1,\n  \"jobName\": \"jobName_e506ca90d3de\",\n  \"minSalary\": 10.00,\n  \"maxSalary\": 300.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/job/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOB_DELETE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/job/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JOB_GET_DETAIL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/job/get-detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"job",
+						"get-detail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
