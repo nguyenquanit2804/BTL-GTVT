@@ -3,7 +3,7 @@ package com.gtvt.backendcustomermanagement.services;
 import cn.hutool.core.lang.UUID;
 import com.gtvt.backendcustomermanagement.common.CustomerManagement;
 import com.gtvt.backendcustomermanagement.entity.Employee;
-import com.gtvt.backendcustomermanagement.minio.MinioCompany;
+//import com.gtvt.backendcustomermanagement.minio.MinioCompany;
 import com.gtvt.backendcustomermanagement.model.request.*;
 import com.gtvt.backendcustomermanagement.model.response.GetDetailByIdCustomerResponse;
 import com.gtvt.backendcustomermanagement.model.response.GetListCustomerResponse;
@@ -28,8 +28,8 @@ public class EmployeeService {
     @Autowired
     QueryEmployee queryEmployee;
 
-    @Autowired
-    MinioCompany minioCompany;
+//    @Autowired
+//    MinioCompany minioCompany;
 
     public void addEmployee(EmployeeCreateRequest request) {
         String nameFace = UUID.randomUUID().toString();
@@ -109,10 +109,10 @@ public class EmployeeService {
 
     }
 
-    private String getBase64FromInputStream(String pathImage) throws IOException {
-        return ConvertByteToBase64Utils.convertBase64(minioCompany.getObjectResponse(pathImage));
-
-    }
+//    private String getBase64FromInputStream(String pathImage) throws IOException {
+//        return ConvertByteToBase64Utils.convertBase64(minioCompany.getObjectResponse(pathImage));
+//
+//    }
 
     public Boolean getCustomerByDepartmentId(Long id) {
         if (id == null) {
