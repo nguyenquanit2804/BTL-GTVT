@@ -43,8 +43,8 @@ public class EmployeeService {
         Employee employee = new Employee();
         BeanUtils.copyProperties(request, employee);
 
-        String uploadImageMinio = minioCompany.putObject(request.getFace(), "/employee/" + DateUtil.getDateToday() + "/" + nameFace);
-        employee.setFace(uploadImageMinio);
+//        String uploadImageMinio = minioCompany.putObject(request.getFace(), "/employee/" + DateUtil.getDateToday() + "/" + nameFace);
+//        employee.setFace(uploadImageMinio);
         employee.setStatus(CustomerManagement.OPEN);
         employeeRepository.saveAndFlush(employee);
     }
@@ -78,15 +78,15 @@ public class EmployeeService {
     public List<GetListCustomerResponse> getCustomerByInformation(GetListCustomerRequest request) {
 
         List<GetListCustomerResponse> getInformation = queryEmployee.getCustomerByInformation(request);
-        getInformation.stream().forEach(response -> {
-            try {
-                if (StringUtil.isNotNullOrEmpty(response.getFace())) {
-                    response.setFace(getBase64FromInputStream(response.getFace()));
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+//        getInformation.stream().forEach(response -> {
+//            try {
+//                if (StringUtil.isNotNullOrEmpty(response.getFace())) {
+//                    response.setFace(getBase64FromInputStream(response.getFace()));
+//                }
+//            } catch (IOException e) {
+//                throw new RuntimeException(e);
+//            }
+//        });
         return getInformation;
 
     }
@@ -95,16 +95,16 @@ public class EmployeeService {
         if (request == null ) {
             throw new IndexOutOfBoundsException("Request is Null");
         }
-        try {
             GetDetailByIdCustomerResponse response = queryEmployee.getDetailByIDCustomer(request.getId());
-            if (StringUtil.isNotNullOrEmpty(response.getFace())) {
-                response.setFace(getBase64FromInputStream(response.getFace()));
-            }
-            return response;
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+//        try {
+//            if (StringUtil.isNotNullOrEmpty(response.getFace())) {
+//                response.setFace(getBase64FromInputStream(response.getFace()));
+//            }
+//            return response;
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+        return response;
 
 
     }
