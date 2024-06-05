@@ -1,2 +1,4 @@
 
 *.log
+backend-customer-management/file-log.log
+*.log
