@@ -29,7 +29,7 @@ public class QueryJob {
         sql.append("count(em.DEPARTMENT_ID) AS jobCountUser ");
         sql.append("FROM ");
         sql.append("JOB job ");
-        sql.append("LEFT JOIN COMPANY.EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
+        sql.append("LEFT JOIN EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
         sql.append("GROUP BY job.JOB_TITLE, job.CREATE_DATE, job.CREATE_BY, job.STATUS, job.JOB_ID ");
         if (StringUtil.isNotNullOrEmpty(request.getJobName())) {
             sql.append("HAVING job.JOB_TITLE = :jobName ");
@@ -51,7 +51,7 @@ public class QueryJob {
         sql.append("count(em.DEPARTMENT_ID) AS jobCountUser ");
         sql.append("FROM ");
         sql.append("JOB job ");
-        sql.append("LEFT JOIN COMPANY.EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
+        sql.append("LEFT JOIN EMPLOYEE em on job.JOB_ID = em.DEPARTMENT_ID AND (job.STATUS = 1) ");
         sql.append("GROUP BY job.JOB_TITLE, job.CREATE_DATE, job.CREATE_BY, job.STATUS, job.JOB_ID ");
         sql.append("HAVING job.JOB_ID = :id ");
         params.put("id", request.getId());
